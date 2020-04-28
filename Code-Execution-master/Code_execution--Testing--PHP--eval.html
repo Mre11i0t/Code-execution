@@ -1,0 +1,8 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>eval</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+</head>
+<body><h1><b><u>eval</u></b></h1><strong>we can try to work out payloads that will give us the same results:</strong><br /><br />• ".": we are just adding a string concatenation; this should give us the same value.<br />• "./*pentesterlab*/": we are just adding a string concatenation and information inside comments; this should give us the same value.<br />Now that we have similar values working, we need to inject code. To  show that we can execute code, we can try to run a command (for example uname -a using the code execution). The full PHP code looks like:<br />system('uname -a');<br />The challenge here is to break out of the code syntax and keep a clean syntax. There are many ways to do it:<br />• By adding dummy code: ".system('uname -a'); $dummy=".<br />• By using comment: ".system('uname -a');# or ".system('uname -a');//.<br />Don't forget that you will need to URL-encode some of the characters (# and ;) before sending the request.<br /></body></html>

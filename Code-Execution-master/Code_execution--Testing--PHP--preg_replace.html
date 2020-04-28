@@ -1,0 +1,8 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>preg_replace</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+</head>
+<body><h1><b><u>preg_replace</u></b></h1>We talked earlier about regular expression modifiers with multi-line  regular expression. Another very dangerous modifier exists in PHP: PCRE_REPLACE_EVAL (/e). This modifier will cause the function preg_replace to evaluate the new value as PHP code, before performing the substitution.<br /><br />Here, you will need to change the pattern, by adding the /e modifier. Once you have added this modifier, you should get a notice:<br />Notice: Use of undefined constant hacker - assumed 'hacker' in /var/www/codeexec/example3.php(3) : regexp code on line 1<br /><br />The function preg_replace tries to evaluate the value hacker as a constant but it's not defined, and you get this message.<br />You can easily replace hacker with a call to the function phpinfo() to get a visible result. Once you can see the result of the phpinfo function, you can use the function system to run any command.<br /><br />Note :    PCRE_REPLACE_EVAL has been deprecated as of PHP 5.5.0</body></html>

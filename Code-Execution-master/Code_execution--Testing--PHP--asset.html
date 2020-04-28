@@ -1,0 +1,8 @@
+<!doctype html><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>asset</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles2.css" type="text/css" />
+</head>
+<body><h1><b><u>asset</u></b></h1>the function assert. When used incorrectly, this function will evaluate the value received. This behaviour can be used to gain code execution. <br />By injecting a single quote or double quote (depending on the way the  string was declared)<br /><br />Once we broke the syntax, we need to try to reconstruct it correctly. We can try the following: hacker'.'. The error message disappeared.<br /><br />Now that we know how to finish the syntax to avoid errors, we can just inject our payload to run the function phpinfo(): hacker'.phpinfo().' and we get the configuration of the PHP engine in the page.<br /></body></html>
